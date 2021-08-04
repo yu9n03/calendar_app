@@ -2,6 +2,7 @@
 import { Calendar} from '@fullcalendar/core';
 import interactionPlugin from '@fullcalendar/interaction';
 import monthGridPlugin from '@fullcalendar/daygrid'
+import weekGridPlugin from '@fullcalendar/timegrid'
 import googleCalendarApi from '@fullcalendar/google-calendar'
 
 //<div id='calendar'></div>のidからオブジェクトを定義してカレンダーを作っていきます。
@@ -10,7 +11,7 @@ document.addEventListener('turbolinks:load', function() {
 
     //カレンダーの中身を設定(月表示とか、クリックアクション起こしたいとか、googleCalendar使うととか)
     var calendar = new Calendar(calendarEl, {
-        plugins: [ monthGridPlugin, interactionPlugin, googleCalendarApi ],
+        plugins: [ weekGridPlugin, monthGridPlugin, interactionPlugin, googleCalendarApi ],
 
 
         //細かな表示設定
